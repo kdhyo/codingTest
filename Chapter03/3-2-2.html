@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>실습 3-2-2 선택 정렬</title>
+        <meta charset="utf-8" />
+    </head> 
+    <body>
+        <form name="inputForm">
+            <div>
+                선택 정렬
+            </div>
+            <div>
+                <input name="str" type="text" size="50" />
+                <input type="button" value="정렬하기" onClick="doSort()"/>
+            </div>
+        </form>
+        <form name="outputForm">
+            <div>
+                정렬 결과
+            </div>
+            <div>
+                <textarea name="result" rows="20" cols="50"></textarea>
+            </div>
+        </form>
+        <script>
+            function doSort() {
+                var inputForm = document.forms.inputForm;
+                var outputFrom = document.forms.outputForm;
+                var ary = inputForm.str.value.split(",");
+                ary = ary.map(function (e) { return Number(e); });
+                outputForm.result.value = ary.join(' ') + '\n';
+                outputForm.result.value = outputForm.result.value + "---" + '\n';
+                selectionSort(ary);
+                outputForm.result.value = outputForm.result.value + "---" + '\n';
+                printAry(ary);
+                outputForm.result.value = outputForm.result.value + "done!" + '\n';
+                // 함수 selectionSort(ary)
+                //      입력: ary 정렬 전의 배열
+                //      출력: 없음(ary의 내용이 정렬됨)
+                function selectionSort(ary) {
+                    var i = 0;
+                    var min;
+                    while (i < ary.length) {
+                        min = i;
+                        var j = i + 1;
+                        while (j < ary.length) {
+                            if (ary[min] > ary[j]) {
+                                min = j;
+                            }
+                            j = j + 1;
+                            printAry(ary);
+                        }
+                        var n  = ary[i];
+                        ary[i] = ary[min];
+                        ary[min] = n;
+                        i = i + 1;
+                    }
+                }
+                // 함수 printAry(ary)
+                //      입력: ary 표시할 배열
+                //      출력: 없음
+                function printAry(ary) {
+                    outputForm.result.value = outputForm.result.value + ary.join(' ') + '\n';
+                }
+            }
+        </script>   
+    </body>
+</html>

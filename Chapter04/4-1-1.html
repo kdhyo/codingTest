@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>실습 4-1-1 문자열 검색</title>
+		<meta charset="utf-8" />
+	</head> 
+	<body>
+		<form name="inputForm">
+			<div>
+				검색 대상 문자열
+			</div>
+			<div>
+				<input name="text" type="text" size="50" />
+			</div>
+			<div>
+				검색 문자열(키워드)
+			</div>
+			<div>
+				<input name="pattern" type="text" size="50" />
+			</div>
+			<div>
+				<input type="button" value="검색하기" onClick="doSearch()"/>
+			</div>
+		</form>
+		<script>
+			function doSearch() {
+				var inputForm = document.forms.inputForm;
+				var text = inputForm.text.value;
+				var pattern = inputForm.pattern.value;
+				var i;
+				i = searchString(text, pattern);
+				if (i >= 0) {
+					alert(i + " 번째 문자에서 찾았습니다.");
+				} else {
+					alert("찾을 수 없습니다.");
+				}
+			}
+			// 함수 searchString(text, pattern)
+			// 		입력: text 검색 대상 문자열, pattern 검색 문자열(키워드)
+			// 		출력: 0 이상　찾은 위치, -1 찾지 못했을 때
+			function searchString(text, pattern) {			
+				var i;
+				i = text.indexOf(pattern);
+				return i;
+			}
+		</script>	
+	</body>
+</html>

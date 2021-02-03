@@ -1,0 +1,22 @@
+body {
+	background: white;
+}
+
+canvas#canvas {
+	border: 2px dotted #aaa;
+}
+
+div#elements {
+	position: absolute;
+}
+
+div#info {
+	width: 30em;
+}
+
+button#clearbutton {
+	color: #3FDA5C;
+	font-weight: bold;
+	font-size: 150%;
+}
+

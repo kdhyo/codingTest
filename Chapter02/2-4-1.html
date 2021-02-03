@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>지금 있는 위치 정보를 표시</title>
+		<meta charset="utf-8" />
+	
+		
+	</head>
+	
+<body>
+	<form>
+		<div>지금 있는 위치 정보를 표시</div>
+		<input type="button" value="표시하기" onclick="showCurrentLocation();">
+	</form>
+
+	<small>
+		Copyright &copy; 2017
+		<br>Shoeisha All Rights Reserved.
+		<br>http://www.shoeisha.co.jp/
+	</small>
+	
+	<script type="text/javascript">
+		function showCurrentLocation(){
+			if ("geolocation" in navigator ){
+				navigator.geolocation.getCurrentPosition(
+					function(position) {
+						alert("위도:" + position.coords.latitude + "\n" + "경도:" + position.coords.longitude);
+					}, 
+					function(err) {
+						alert(err.message)
+					},
+					{
+						enableHighAccuracy: true, timeout : 5000
+					});
+			}else{
+				alert("위치정보를 취득할 수 없습니다.");
+			}
+		}
+	</script>		
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Handwritten digit demo</title>
+		<link rel="stylesheet" type="text/css" href="mnistjs.css">
+		<script src="linear.js"></script>
+		<script src="weights0.json"></script>
+		<script src="weights1.json"></script>
+		<script src="mnistjs.js"></script>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+		<div id="elements">
+			<button id="clearbutton">Clear</button>
+			<p>Guess: <span id="guess"></span></p>
+
+			<div id="info">
+				<p>This is a program to recognise handwritten digits. To use it, draw a number in the box. When you stop drawing, the text above ("Guess") above will be updated with what the program thinks it is.</p>
+
+				<p>For best results, numbers should stretch top to bottom, occupying most of the vertical space in the box.</p>
+
+				<p>For technical details, see <a href="http://code.lardcave.net/2015/12/06/1/">the blog post</a>.</p>
+
+				<p><a href="https://github.com/nfd/mnistjs">Get the source code</a>.</p>
+			</div>
+
+		</div>
+	</body>
+</html>
+
