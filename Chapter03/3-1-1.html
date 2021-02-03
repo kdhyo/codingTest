@@ -19,11 +19,11 @@
 		</form>
 		<script>
 			function doDivide() {
-				var inputForm = document.forms.inputForm;
-				var outputForm = document.forms.outputForm;
-				var a = parseInt(inputForm.a.value);
-				var b = parseInt(inputForm.b.value);
-				var result = divide(a,b);
+				const inputForm = document.forms.inputForm;
+				const outputForm = document.forms.outputForm;
+				const a = parseInt(inputForm.a.value);
+				const b = parseInt(inputForm.b.value);
+				const result = divide(a,b);
 				if (result == null) {
 					outputForm.result.value = "0으로 나눌 수는 없습니다!";				
 				} else {
@@ -34,8 +34,8 @@
 			// 		입력： a 피제수, b 제수
 			// 		출력： [몫, 나머지]
 			function divide(a, b) {
-                var q = 0;          // 몫을 저장하는 변수 q에 0을 대입한다
-                var r = a;          // 나머지를 저장하는 r에 a를 대입한다
+                let q = 0;          // 몫을 저장하는 변수 q에 0을 대입한다
+                let r = a;          // 나머지를 저장하는 r에 a를 대입한다
                 if (b == 0) {       // b가 0이면
                     return null;    // 결과를 null로 종료한다
                 }   
