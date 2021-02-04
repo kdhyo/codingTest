@@ -24,9 +24,9 @@
         </form>
         <script>
             function doSort() {
-                var inputForm = document.forms.inputForm;
-                var outputFrom = document.forms.outputForm;
-                var ary = inputForm.str.value.split(",");
+                const inputForm = document.forms.inputForm;
+                const outputFrom = document.forms.outputForm;
+                let ary = inputForm.str.value.split(",");
                 ary = ary.map(function (e) { return Number(e); });
                 outputForm.result.value = ary.join(' ') + '\n';
                 outputForm.result.value = outputForm.result.value + "---" + '\n';
@@ -38,12 +38,12 @@
                 //      입력: ary 정렬 전의 배열
                 //      출력: 없음(ary의 내용이 정렬됨)
                 function bubbleSort(ary) {
-                    var i = 0;
+                    let i = 0;
                     while (i < ary.length - 1)  {
-                        var j = 0;
+                        let j = 0;
                         while (j < ary.length - i - 1) {
                             if (ary[j] > ary[j + 1]) {
-                                var n = ary[j];
+                                let n = ary[j];
                                 ary[j] = ary[j + 1];
                                 ary[j + 1] = n;
                             }
